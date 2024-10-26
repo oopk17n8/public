@@ -9,7 +9,7 @@ public class ArrayMemoryCoSoDuLieu {
     private static GiaoDich[] listGD = null;
     private static int countGD = 0;
 
-    private static void initDatabase(){
+    public static void initDatabase(){
         listGD = new GiaoDich[100];
     }
 

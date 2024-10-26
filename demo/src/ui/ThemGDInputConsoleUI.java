@@ -1,6 +1,6 @@
 package ui;
 
-import java.util.Date;
+
 import java.util.Scanner;
 
 import controller.ThemGDController;
@@ -33,8 +33,8 @@ public class ThemGDInputConsoleUI {
         screenPrompt.print(maGDPropmt);screenPrompt.flush();
         int maGD = keyBoardInput.nextInt();keyBoardInput.nextLine();
 
-        //screenPrompt.print(ngayGDPrompt);screenPrompt.flush();
-        Date ngayGD = null;
+        screenPrompt.print(ngayGDPrompt);screenPrompt.flush();
+        String ngayGD = keyBoardInput.nextLine();
 
         screenPrompt.print(donGiaPrompt);screenPrompt.flush();
         double donGia = keyBoardInput.nextDouble();
@@ -45,29 +45,40 @@ public class ThemGDInputConsoleUI {
         screenPrompt.print(loaiGD);screenPrompt.flush();
         String loaiGD = keyBoardInput.nextLine();
 
-        if ("Dat".equalsIgnoreCase(loaiGD)){
+        if (loaiGD.equalsIgnoreCase("dat")){
             screenPrompt.print(loaiDat);screenPrompt.flush();
-            if ("Loai A".equalsIgnoreCase(loaiDat)){
-                themGDController.themGD(maGD, ngayGD, donGia, dienTich, true);
-            }
-            else {themGDController.themGD(maGD, ngayGD, donGia, dienTich, false);}
+            String loaiDat = keyBoardInput.nextLine();
+            //if (loaiDat.equalsIgnoreCase("a")){
+            //    themGDController.themGD(maGD, ngayGD, donGia, dienTich, true);
+            //}
+            //else {themGDController.themGD(maGD, ngayGD, donGia, dienTich, false);
+            //}
+            themGDController.themGD(maGD, ngayGD, donGia, dienTich, false);
         }
-        if ("Nha".equalsIgnoreCase(loaiGD)){
+
+        if (loaiGD.equalsIgnoreCase("nha")){
+            screenPrompt.print(diaChiPrompt);screenPrompt.flush();
+            String diaChi = keyBoardInput.nextLine();
             screenPrompt.print(loaiNha);screenPrompt.flush();
-            if ("Cao cap".equalsIgnoreCase(loaiNha)){
-                screenPrompt.print(diaChiPrompt);screenPrompt.flush();
-                String diaChi = keyBoardInput.nextLine();
-                themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
-            }
-            else {
-                screenPrompt.print(diaChiPrompt);screenPrompt.flush();
-                String diaChi = keyBoardInput.nextLine();
-                themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
-            }
+            String loaiNha = keyBoardInput.nextLine();
+           // if (loaiNha.equalsIgnoreCase("cao cap")){
+           //     screenPrompt.print(diaChiPrompt);screenPrompt.flush();
+           //     String diaChi = keyBoardInput.nextLine();
+           //     themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
+           // }
+           // else {
+           //     screenPrompt.print(diaChiPrompt);screenPrompt.flush();
+           //     String diaChi = keyBoardInput.nextLine();
+           //     themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
+           // }
+           themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
         }
     }
+
+    
     public void setThemGDController(ThemGDController themGDController){
         this.themGDController = themGDController;
     }
 
 }
+
