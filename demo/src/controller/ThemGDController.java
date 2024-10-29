@@ -2,7 +2,7 @@ package controller;
 
 import Entity.GiaoDich;
 
-import java.util.Date;
+import java.sql.Date;
 
 import Entity.Dat;
 import Entity.Nha;
@@ -18,12 +18,12 @@ public class ThemGDController {
         themGDDAO = new ThemGDDAO();
     }
 
-    public void themGD(long maGD, String ngayGD, double donGia, double dienTich, boolean loaiDat){
+    public void themGD(long maGD, Date ngayGD, double donGia, double dienTich, String loaiDat){
         Dat dat = new Dat(maGD, ngayGD, donGia, dienTich, loaiDat);
         themGD(dat);
     }
 
-    public void themGD(long maGD, String ngayGD, double donGia, double dienTich, String diaChi, boolean loaiNha){
+    public void themGD(long maGD, Date ngayGD, double donGia, double dienTich, String diaChi, String loaiNha){
         Nha nha = new Nha(maGD, ngayGD, donGia, dienTich, diaChi, loaiNha);
         themGD(nha);
     }

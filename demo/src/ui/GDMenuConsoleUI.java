@@ -20,10 +20,8 @@ public class GDMenuConsoleUI {
         screenPrompt.println("go lenh \"help\" de duoc ho tro");
 
         while(true){
-            screenPrompt.print(prompt);
-            screenPrompt.flush();
-            command = keyBoardInput.nextLine();
-            command = command.trim();
+            screenPrompt.print(prompt);screenPrompt.flush();
+            command = keyBoardInput.nextLine();command = command.trim();
 
             if (command.equalsIgnoreCase("help")){
                 help();

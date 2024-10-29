@@ -1,6 +1,6 @@
 package ui;
 
-
+import java.sql.Date;
 import java.util.Scanner;
 
 import controller.ThemGDController;
@@ -10,7 +10,8 @@ import java.io.PrintWriter;
 public class ThemGDInputConsoleUI {
     private Scanner keyBoardInput = null;
     private PrintWriter screenPrompt = null;
-    private String loaiDat, loaiNha, loaiGD, maGDPropmt, ngayGDPrompt, donGiaPrompt, dienTichPrompt, diaChiPrompt;
+    private String loaiDatPrompt, loaiNhaPrompt, loaiGDPrompt, maGDPropmt, 
+    ngayGDPrompt, donGiaPrompt, dienTichPrompt, diaChiPrompt,loaiGD;
     
     private ThemGDController themGDController = null;
 
@@ -20,13 +21,14 @@ public class ThemGDInputConsoleUI {
         themGDController = new ThemGDController();
         
         maGDPropmt = "MA GIAO DICH: ";
-        ngayGDPrompt = "NGAY GIAO DINH: ";
+        ngayGDPrompt = "NGAY GIAO DICH [yyyy-mm-dd]: ";
         donGiaPrompt = "DON GIA: ";
         dienTichPrompt = "DIEN TICH: ";
 
-        loaiGD = "LOAI GIAO DICH [\"Dat\" / \"Nha\"]: ";
-        loaiDat = "LOAI DAT [\"Loai A\" / \"Loai B\" / \"Loai C\"]: ";
-        loaiNha = "LOAI NHA [\"Cao Cap\" / \"Thuong\"]: "; diaChiPrompt = "DIA CHI: ";
+        loaiGDPrompt = "LOAI GIAO DICH [Dat/Nha]: ";
+        loaiDatPrompt = "LOAI DAT [A/B/C]: ";
+        loaiNhaPrompt = "LOAI NHA [Cao cap/Thuong]: ";
+        diaChiPrompt = "DIA CHI: ";
     }
 
     public void nhapThongTinGD(){
@@ -34,7 +36,7 @@ public class ThemGDInputConsoleUI {
         int maGD = keyBoardInput.nextInt();keyBoardInput.nextLine();
 
         screenPrompt.print(ngayGDPrompt);screenPrompt.flush();
-        String ngayGD = keyBoardInput.nextLine();
+        Date ngayGD = Date.valueOf((String)keyBoardInput.nextLine());
 
         screenPrompt.print(donGiaPrompt);screenPrompt.flush();
         double donGia = keyBoardInput.nextDouble();
@@ -42,36 +44,22 @@ public class ThemGDInputConsoleUI {
         screenPrompt.print(dienTichPrompt);screenPrompt.flush();
         double dienTich = keyBoardInput.nextDouble();
 
-        screenPrompt.print(loaiGD);screenPrompt.flush();
-        String loaiGD = keyBoardInput.nextLine();
-
-        if (loaiGD.equalsIgnoreCase("dat")){
-            screenPrompt.print(loaiDat);screenPrompt.flush();
+        screenPrompt.print(loaiGDPrompt);screenPrompt.flush();
+        loaiGD = keyBoardInput.nextLine();loaiGD.trim();
+        
+        if("dat".equalsIgnoreCase(loaiGD)){
+            screenPrompt.print(loaiDatPrompt);screenPrompt.flush();
             String loaiDat = keyBoardInput.nextLine();
-            //if (loaiDat.equalsIgnoreCase("a")){
-            //    themGDController.themGD(maGD, ngayGD, donGia, dienTich, true);
-            //}
-            //else {themGDController.themGD(maGD, ngayGD, donGia, dienTich, false);
-            //}
-            themGDController.themGD(maGD, ngayGD, donGia, dienTich, false);
-        }
 
-        if (loaiGD.equalsIgnoreCase("nha")){
+            themGDController.themGD(maGD, ngayGD, donGia, dienTich, loaiDat);
+        }
+        if("nha".equalsIgnoreCase(loaiGD)) {
             screenPrompt.print(diaChiPrompt);screenPrompt.flush();
             String diaChi = keyBoardInput.nextLine();
-            screenPrompt.print(loaiNha);screenPrompt.flush();
+            screenPrompt.print(loaiNhaPrompt);screenPrompt.flush();
             String loaiNha = keyBoardInput.nextLine();
-           // if (loaiNha.equalsIgnoreCase("cao cap")){
-           //     screenPrompt.print(diaChiPrompt);screenPrompt.flush();
-           //     String diaChi = keyBoardInput.nextLine();
-           //     themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
-           // }
-           // else {
-           //     screenPrompt.print(diaChiPrompt);screenPrompt.flush();
-           //     String diaChi = keyBoardInput.nextLine();
-           //     themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
-           // }
-           themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, false);
+
+            themGDController.themGD(maGD, ngayGD, donGia, dienTich, diaChi, loaiNha);
         }
     }
 

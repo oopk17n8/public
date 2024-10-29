@@ -6,7 +6,7 @@ public class ThemGDOutputConsoleUI {
     private PrintWriter screenPrompt = null;
 
     public ThemGDOutputConsoleUI(){
-        screenPrompt = new PrintWriter(System.out);
+        screenPrompt = new PrintWriter(System.out,true);
     }
 
     public void showResult(){

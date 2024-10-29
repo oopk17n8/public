@@ -1,13 +1,13 @@
 package Entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class GiaoDich {
     protected long maGD;
-    protected String ngayGD;
+    protected Date ngayGD;
     protected double donGia;
     protected double dienTich;
-    protected GiaoDich(long maGD, String ngayGD, double donGia, double dienTich){
+    protected GiaoDich(long maGD, Date ngayGD, double donGia, double dienTich){
         super();
         this.maGD = maGD;
         this.ngayGD=ngayGD;

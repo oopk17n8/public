@@ -4,6 +4,7 @@ import Entity.Dat;
 import Entity.GiaoDich;
 import Entity.Nha;
 
+
 public class ArrayMemoryCoSoDuLieu {
 
     private static GiaoDich[] listGD = null;

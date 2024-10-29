@@ -1,10 +1,11 @@
 package Entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Dat extends GiaoDich {
-    private boolean loaiDat;
-    public Dat(long maGD, String ngayGD, double donGia, double dienTich, boolean loaiDat ){
+    
+    private String loaiDat;
+    public Dat(long maGD, Date ngayGD, double donGia, double dienTich, String loaiDat ){
         super(maGD, null, donGia, dienTich);
         this.loaiDat=loaiDat;
     }
