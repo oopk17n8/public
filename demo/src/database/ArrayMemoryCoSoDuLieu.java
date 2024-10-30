@@ -1,8 +1,8 @@
 package database;
 
-import Entity.Dat;
+
 import Entity.GiaoDich;
-import Entity.Nha;
+
 
 
 public class ArrayMemoryCoSoDuLieu {
@@ -17,6 +17,10 @@ public class ArrayMemoryCoSoDuLieu {
     public static void insertGD(GiaoDich gd){ //them danh sach giao dich
         listGD[countGD] = gd;
         countGD++;
+    }
+    
+    public static void deleteGD(int a){
+        listGD[a] = null;
     }
 
     public static GiaoDich[] queryALLGD(){

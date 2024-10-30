@@ -1,5 +1,5 @@
+package ui;
 import database.ArrayMemoryCoSoDuLieu;
-import ui.GDMenuConsoleUI;
 
 public class AppGiaoDich {
     public static ArrayMemoryCoSoDuLieu database = null;

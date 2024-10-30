@@ -20,19 +20,18 @@ public class GDMenuConsoleUI {
         screenPrompt.println("go lenh \"help\" de duoc ho tro");
 
         while(true){
-            screenPrompt.print(prompt);screenPrompt.flush();
-            command = keyBoardInput.nextLine();command = command.trim();
-
+            screenPrompt.print(prompt);
+            screenPrompt.flush();
+            command = keyBoardInput.nextLine();
+            command = command.trim();
             if (command.equalsIgnoreCase("help")){
                 help();
                 continue;
             }
-
             if (command.equalsIgnoreCase("add")){
                 themGD();
                 continue;
             }
-
             if (command.equalsIgnoreCase("quit")){
                 break;
             }
@@ -47,7 +46,7 @@ public class GDMenuConsoleUI {
 		screenPrompt.println("[QUIT] Dong phan mem");
     }
 
-    private void themGD(){
+    private void themGD()   {
         themGDCUI.nhapThongTinGD();
     }
 }
