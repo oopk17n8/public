@@ -16,12 +16,12 @@ public class ThemGDController {
         themGDDAO = new ThemGDDAO();
     }
 
-    public void themGD(int maGD, Date ngayGD, double donGia, double dienTich, String loaiDat){
+    public void themGD(String maGD, Date ngayGD, double donGia, double dienTich, String loaiDat){
         Dat dat = new Dat(maGD, ngayGD, donGia, dienTich, loaiDat);
         themGD(dat);
     }
 
-    public void themGD(int maGD, Date ngayGD, double donGia, double dienTich, String diaChi, String loaiNha){
+    public void themGD(String maGD, Date ngayGD, double donGia, double dienTich, String diaChi, String loaiNha){
         Nha nha = new Nha(maGD, ngayGD, donGia, dienTich, diaChi, loaiNha);
         themGD(nha);
     }

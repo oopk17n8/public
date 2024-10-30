@@ -7,12 +7,14 @@ public class GDMenuConsoleUI {
     private String prompt = null;
     private PrintWriter screenPrompt = null;
     private ThemGDInputConsoleUI themGDCUI = null;
+    private TimKiemGDConsoleUI timGDCUI = null;
 
     public GDMenuConsoleUI(){
         prompt = "-> ";
         keyBoardInput = new Scanner(System.in);
         screenPrompt = new PrintWriter(System.out, true);
         themGDCUI = new ThemGDInputConsoleUI();
+        timGDCUI = new TimKiemGDConsoleUI();
     }
 
     public void controlloop(){
@@ -32,6 +34,10 @@ public class GDMenuConsoleUI {
                 themGD();
                 continue;
             }
+            if(command.equalsIgnoreCase("s")){
+                timGD();
+                continue;
+            }
             if (command.equalsIgnoreCase("quit")){
                 break;
             }
@@ -43,10 +49,15 @@ public class GDMenuConsoleUI {
         screenPrompt.println("~~~~~Console Help Menu~~~~~");
 		screenPrompt.println("[HELP] Ho tro su dung phan mem");
 		screenPrompt.println("[ADD] Them giao dich moi");
+        screenPrompt.println("[S] Tim giao dich");
 		screenPrompt.println("[QUIT] Dong phan mem");
     }
 
     private void themGD()   {
         themGDCUI.nhapThongTinGD();
+    }
+
+    private void timGD(){
+        timGDCUI.searchGD();
     }
 }

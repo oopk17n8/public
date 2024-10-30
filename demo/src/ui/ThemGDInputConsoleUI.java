@@ -27,7 +27,7 @@ public class ThemGDInputConsoleUI {
     
     public void nhapThongTinGD(){
         screenPrompt.print(maGDPropmt);screenPrompt.flush();
-        int maGD = keyBoardInput.nextInt();keyBoardInput.nextLine();
+        String maGD = keyBoardInput.nextLine();
         screenPrompt.print(ngayGDPrompt);screenPrompt.flush();
         Date ngayGD = Date.valueOf((String)keyBoardInput.nextLine());
         screenPrompt.print(donGiaPrompt);screenPrompt.flush();
