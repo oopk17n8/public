@@ -8,6 +8,7 @@ public class GDMenuConsoleUI {
     private PrintWriter screenPrompt = null;
     private ThemGDInputConsoleUI themGDCUI = null;
     private TimKiemGDConsoleUI timGDCUI = null;
+    private XoaGDInputConsoleUI xoaGDCUI = null;
 
     public GDMenuConsoleUI(){
         prompt = "-> ";
@@ -15,6 +16,7 @@ public class GDMenuConsoleUI {
         screenPrompt = new PrintWriter(System.out, true);
         themGDCUI = new ThemGDInputConsoleUI();
         timGDCUI = new TimKiemGDConsoleUI();
+        xoaGDCUI = new XoaGDInputConsoleUI();
     }
 
     public void controlloop(){
@@ -38,6 +40,10 @@ public class GDMenuConsoleUI {
                 timGD();
                 continue;
             }
+            if(command.equalsIgnoreCase("xoa")){
+                xoaGD();
+                continue;
+            }
             if (command.equalsIgnoreCase("quit")){
                 break;
             }
@@ -50,6 +56,7 @@ public class GDMenuConsoleUI {
 		screenPrompt.println("[HELP] Ho tro su dung phan mem");
 		screenPrompt.println("[ADD] Them giao dich moi");
         screenPrompt.println("[S] Tim giao dich");
+        screenPrompt.println("[XOA] Xoa giao dich");
 		screenPrompt.println("[QUIT] Dong phan mem");
     }
 
@@ -59,5 +66,8 @@ public class GDMenuConsoleUI {
 
     private void timGD(){
         timGDCUI.searchGD();
+    }
+    private void xoaGD(){
+        xoaGDCUI.xoaGD();
     }
 }

@@ -1,13 +1,13 @@
 package controller;
 
 import Entity.GiaoDich;
-import database.TimKiemGDDAO;
+import database.GetGdDAO;
+
 
 public class TimKiemGDController {
-    private TimKiemGDDAO SGdDAO = null;
-    
+    private GetGdDAO SGdDAO = null;
     public TimKiemGDController(){
-        SGdDAO = new TimKiemGDDAO();
+        SGdDAO = new GetGdDAO();
     }
        public GiaoDich timGiaoDich(String maGiaoDich) {
         for (GiaoDich gd : SGdDAO.getALLGd()) {
