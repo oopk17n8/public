@@ -13,12 +13,12 @@ public class TimKiemGDConsoleUI {
     }
     public void searchGD(){
         
-        System.out.print("nhap ma giao dich can tim: ");
+        System.out.print("Nhap ma giao dich can tim: ");
         String ma = sc.nextLine();
         GiaoDich gd = SGDController.timGiaoDich(ma);
 
         if (gd != null) {
-            System.out.println("Giao dich tim duoc: " + gd);
+            System.out.println("Da tim thay giao dich, " + gd);
         } else {
             System.out.println("Khong tim thay giao dich.");
         }

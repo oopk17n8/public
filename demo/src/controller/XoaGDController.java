@@ -1,15 +1,15 @@
 package controller;
 
 import Entity.GiaoDich;
-import database.GetGdDAO;
+import database.XoaGDDAO;
 import ui.XoaGDOutputConsoleUI;
 
 public class XoaGDController {
-    private GetGdDAO XGdDAO = null;
+    private XoaGDDAO XGdDAO = null;
     private XoaGDOutputConsoleUI XGdOut = null;
 
     public XoaGDController() {
-        XGdDAO = new GetGdDAO();
+        XGdDAO = new XoaGDDAO();
         XGdOut = new XoaGDOutputConsoleUI();
     }
 
