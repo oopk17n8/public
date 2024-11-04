@@ -10,14 +10,15 @@ public abstract class GiaoDich {
   protected Date ngayGD;
   protected double donGia;
   protected double dienTich;
-  private NumberFormat f;
+  private NumberFormat f,f1;
   protected GiaoDich(String maGD, Date ngayGD, double donGia, double dienTich) {
     super();
     this.maGD = maGD;
     this.ngayGD = ngayGD;
     this.donGia = donGia;
     this.dienTich = dienTich;
-    f = new DecimalFormat("#0.00");
+    f = new DecimalFormat("#0.00 vnd");
+    f1 = new DecimalFormat("#0.0");
   }
 
   public double getdonGia() {
@@ -32,7 +33,7 @@ public abstract class GiaoDich {
     return "Giao dich ma so: " + maGD +
         "\n ngay giao dich: " + ngayGD +
         "\n gia: " + f.format(donGia) +
-        "\n dien tich: " + f.format(dienTich);
+        "\n dien tich: " + f1.format(dienTich);
   }
 
   public int getId() {
