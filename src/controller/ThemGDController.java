@@ -1,7 +1,7 @@
 package controller;
 
 import Entity.GiaoDich;
-import java.sql.Date;
+import java.util.Date;
 import Entity.Dat;
 import Entity.Nha;
 import database.ThemGDDAO;
