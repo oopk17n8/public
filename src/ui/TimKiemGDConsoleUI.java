@@ -18,7 +18,7 @@ public class TimKiemGDConsoleUI {
         GiaoDich gd = SGDController.timGiaoDich(ma);
 
         if (gd != null) {
-            System.out.println("Da tim thay giao dich,\n " + gd.getGD());
+            System.out.println("Da tim thay giao dich.\n" + gd.getGD());
         } else {
             System.out.println("Khong tim thay giao dich.");
         }

@@ -12,7 +12,7 @@ public class Dat extends GiaoDich {
     @Override
     public String getGD() {
         // TODO Auto-generated method stub
-        return "{ma gd: " + maGD + ", ngay gd: " + ngayGD + ", loai dat: " + loaiDat +", dien tich: "+ dienTich + ", don gia: " + donGia + "}";
+        return "Giao dich dat loai: "+ loaiDat + " | ma gd: " + maGD + ", ngay gd: " + ngayGD  +", dien tich: "+ dienTich + ", don gia: " + donGia + ".";
     }
     @Override
     public double tinhThanhTien() {

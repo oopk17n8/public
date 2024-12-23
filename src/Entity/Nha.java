@@ -14,7 +14,7 @@ public class Nha extends GiaoDich {
     @Override
     public String getGD() {
         // TODO Auto-generated method stub
-        return "{ma gd: " + maGD + ", ngay gd: " + ngayGD + ", loai nha: " + loaiNha + ", dia chi: " + diaChi + ", dien tich: "+ dienTich + ", don gia: " + donGia + "}";
+        return "Giao dich nha loai: " + loaiNha + " | ma gd: " + maGD + ", ngay gd: " + ngayGD  + ", dia chi: " + diaChi + ", dien tich: "+ dienTich + ", don gia: " + donGia + "}";
     }
     @Override
     public double tinhThanhTien() {

@@ -1,5 +1,9 @@
 package ui;
 import java.util.Scanner;
+
+import controller.InDSGDController;
+import controller.TBThanhTienGDDatController;
+
 import java.io.PrintWriter;
 
 public class GDMenuConsoleUI {
@@ -9,6 +13,8 @@ public class GDMenuConsoleUI {
     private ThemGDInputConsoleUI themGDCUI = null;
     private TimKiemGDConsoleUI timGDCUI = null;
     private XoaGDInputConsoleUI xoaGDCUI = null;
+    private InDSGDController inDSGD = null;
+    private TBThanhTienGDDatController tbDat = null;
 
     public GDMenuConsoleUI(){
         prompt = "-> ";
@@ -17,6 +23,8 @@ public class GDMenuConsoleUI {
         themGDCUI = new ThemGDInputConsoleUI();
         timGDCUI = new TimKiemGDConsoleUI();
         xoaGDCUI = new XoaGDInputConsoleUI();
+        inDSGD = new InDSGDController();
+        tbDat = new TBThanhTienGDDatController();
     }
 
     public void controlloop(){
@@ -36,8 +44,17 @@ public class GDMenuConsoleUI {
                 themGD();
                 continue;
             }
-            if(command.equalsIgnoreCase("s")){
+
+            if (command.equalsIgnoreCase("in")) {
+                inDSGD();
+                continue;
+            }
+            if(command.equalsIgnoreCase("tim")){
                 timGD();
+                continue;
+            }
+            if (command.equalsIgnoreCase("tbdat")) {
+                tinhTBDat();
                 continue;
             }
             if(command.equalsIgnoreCase("xoa")){
@@ -55,7 +72,9 @@ public class GDMenuConsoleUI {
         screenPrompt.println("~~~~~Console Help Menu~~~~~");
 		screenPrompt.println("[HELP] Ho tro su dung phan mem");
 		screenPrompt.println("[ADD] Them giao dich moi");
-        screenPrompt.println("[S] Tim giao dich");
+        screenPrompt.println("[TIM] Tim giao dich");
+        screenPrompt.println("[IN] Tim giao dich");
+        screenPrompt.println("[TBDAT] Tinh trung binh thanh tien giao dich dat");
         screenPrompt.println("[XOA] Xoa giao dich");
 		screenPrompt.println("[QUIT] Dong phan mem");
     }
@@ -69,5 +88,11 @@ public class GDMenuConsoleUI {
     }
     private void xoaGD(){
         xoaGDCUI.xoaGD();
+    }
+    private void inDSGD(){
+        inDSGD.getDSGD();
+    }
+    private void tinhTBDat(){
+        tbDat.tinhTBDat();
     }
 }
