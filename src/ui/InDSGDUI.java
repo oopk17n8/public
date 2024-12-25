@@ -18,7 +18,9 @@ public class InDSGDUI {
     public void inDSGD(GiaoDich[] dsgd, int size){
         for (int i = 0; i < size; i++) {
             GiaoDich gd = dsgd[i];
-            screenPrompt.println(gd.getGD());
+            if (dsgd[i] != null) {
+                screenPrompt.println(gd.getGD());
+            }
         }
     }
 }

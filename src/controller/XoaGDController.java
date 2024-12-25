@@ -17,8 +17,8 @@ public class XoaGDController {
         GiaoDich[] allGd = XGdDAO.getALLGd();
 
         for (GiaoDich gd : allGd) {
-            //System.out.println("Check gd " + gd.getMaGD());
-            if (gd != null && gd.getMaGD().equals(maGiaoDich)) {
+            System.out.println("Check gd " + gd.getMaGD());
+            if (gd.getMaGD().equals(maGiaoDich)) {
                 XGdDAO.removeGd(gd);
                 XGdOut.success();
                 return gd;

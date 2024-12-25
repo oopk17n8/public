@@ -29,6 +29,6 @@ public abstract class GiaoDich {
   public abstract double tinhThanhTien();
 
   public int getId() {
-    return id;
+    return id+1;
   }
 }
